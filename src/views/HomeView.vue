@@ -111,11 +111,10 @@ onMounted(() => {
   })
 
   //! 覆盖物的添加
-
   const element = document.getElementById('overlay') as HTMLElement
 
   // 设置覆盖物基础信息
-  const popup = new Overlay({
+  const overlay = new Overlay({
     element: element,
     positioning: 'bottom-center',
     autoPan: true,
@@ -124,12 +123,12 @@ onMounted(() => {
   })
 
   // 定义Overlay的地理信息
-  popup.setPosition([-10670028.5, 4604280])
+  overlay.setPosition([-10670028.5, 4604280])
   // 设置覆盖物的样式与内容
   element.innerHTML = 'Hello Overlay'
   element.style.background = '#000'
   // 将覆盖物添加到地图中
-  map.addOverlay(popup)
+  map.addOverlay(overlay)
 
   //! 点要素的添加
 
