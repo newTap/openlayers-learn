@@ -163,11 +163,11 @@ var feature = new ol.Feature({
 ### Style
 
 1. ol.style.Style：矢量要素渲染样式的容器；
-2. Fill：设置矢量要素的填充样式；
-3. Icon：设置矢量要素的icon样式；
-4. Text：设置矢量要素的文本样式；
-5. Circle：设置矢量要素的圆形样式；
-6. Stroke：设置矢量要素的描边样式；
-7. RegularShape：设置矢量要素的常规形状样式；
+2. ol.style.Fill：设置矢量要素的填充样式；
+3. ol.style.Icon：设置矢量要素的icon样式；
+4. ol.style.Text：设置矢量要素的文本样式；
+5. ol.style.Circle：设置矢量要素的圆形样式；
+6. ol.style.Stroke：设置矢量要素的描边样式；
+7. ol.style.RegularShape：设置矢量要素的常规形状样式；
 
 ![标记](/Image/9.png)
