@@ -5,7 +5,7 @@ import XYZ from 'ol/source/XYZ.js'
 import { defaults } from 'ol/control/defaults.js'
 import View from 'ol/View.js'
 
-function initMap(target: string) {
+function initMap(target: string): Map {
   return new Map({
     // 在layers图层中,如果都未设置zIndex，那么后面的图层会覆盖前面的图层
     layers: [
