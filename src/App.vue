@@ -6,6 +6,10 @@ const router = [
     label: 'Home'
   },
   {
+    path: '/geo-json',
+    label: 'GeoJson'
+  },
+  {
     path: '/about',
     label: 'About'
   }
