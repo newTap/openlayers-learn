@@ -14,6 +14,10 @@ const router = [
     label: 'drawFeature'
   },
   {
+    path: '/vector-context-animation',
+    label: 'vectorContextAnimation'
+  },
+  {
     path: '/about',
     label: 'About'
   }
