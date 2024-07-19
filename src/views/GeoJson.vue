@@ -62,7 +62,7 @@ onMounted(() => {
 
   const infoDom = document.getElementById('info') as HTMLElement
 
-  let lastFeature: Feature | undefinde
+  let lastFeature: Feature | undefined
 
   function displayFeatureInfo(pixel: Pixel) {
     const feature = map.forEachFeatureAtPixel(pixel, function (feature) {
@@ -81,11 +81,11 @@ onMounted(() => {
     }
     // 设置提示框位置
     if (feature) {
-      info.style.left = pixel[0] - infoDom.offsetWidth / 2 + 'px'
-      info.style.top = pixel[1] + 30 + 'px'
-      info.style.display = 'visible'
+      infoDom.style.left = pixel[0] - infoDom.offsetWidth / 2 + 'px'
+      infoDom.style.top = pixel[1] + 30 + 'px'
+      infoDom.style.display = 'visible'
     } else {
-      info.style.display = 'hidden'
+      infoDom.style.display = 'hidden'
     }
 
     // 设置高亮图层信息
