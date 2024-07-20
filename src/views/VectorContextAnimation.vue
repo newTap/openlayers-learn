@@ -34,7 +34,7 @@ const view = new View({
   // 默认为 EPSG:3857
   projection: 'EPSG:4326',
   // 初始视图分辨率
-  zoom: 4,
+  zoom: 8,
   // 地图旋卷角度
   rotation: 0
 })
@@ -64,12 +64,9 @@ onMounted(() => {
   map.addLayer(pointLayer)
 
   map.on('click', (e) => {
-    console.log('click', e)
-    console.log(map.getEventPixel(e.originalEvent))
-    console.log(e.coordinate)
     map.getView().animate({
       center: e.coordinate,
-      zoom: 10,
+      zoom: 8,
       duration: 2000
     })
   })
@@ -92,13 +89,14 @@ function pointStyle() {
 
 const pointPool = [
   [114.3, 30.5],
-  [114.3, 30.6],
-  [114.3, 30.7],
-  [114.3, 30.8],
-  [114.3, 30.9],
+  [114.5, 30.6],
+  [114.7, 30.7],
+  [114.9, 30.8],
+  [114.1, 30.9],
   [114.3, 31.0]
 ]
 
+// 添加点要素
 function addPoint() {
   if (pointPool.length === 0) {
     return false
@@ -115,7 +113,7 @@ function flash(feature: Feature) {
   const start = Date.now()
   // 复制几何图形信息
   const geometry = feature.getGeometry()?.clone()
-  // 监听图层的渲染
+  // 当地图被渲染后,计算下一帧的动画效果
   let listenerKey = pointLayer.on('postrender', animate)
 
   function animate(event: RenderEvent) {
@@ -134,6 +132,7 @@ function flash(feature: Feature) {
     const elapsedRatio = elapsed / duration
     // 圆的半径为5开始到30结束
     const radius = easeOut(elapsedRatio) * 25 + 5
+    // 设置透明度
     const opacity = easeOut(1 - elapsedRatio)
     const style = new Style({
       image: new CircleStyle({
@@ -155,8 +154,8 @@ function flash(feature: Feature) {
   }
 }
 
+// 当添加点要素时，为其开始动画效果
 pointLayer.getSource()?.on('addfeature', function (e) {
-  console.log(e)
   flash(e.feature as Feature)
 })
 </script>
