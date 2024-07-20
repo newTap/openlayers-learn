@@ -28,7 +28,7 @@ const router = createRouter({
     },
     {
       path: '/draw-feature',
-      name: 'geojson',
+      name: 'DrawFeature',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited
@@ -41,6 +41,14 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited
       component: () => import('../views/VectorContextAnimation.vue')
+    },
+    {
+      path: '/heat-map',
+      name: 'HeatMap',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited
+      component: () => import('../views/HeatMap.vue')
     }
   ]
 })

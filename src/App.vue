@@ -18,6 +18,10 @@ const router = [
     label: 'vectorContextAnimation'
   },
   {
+    path: '/heat-map',
+    label: 'HeatMap'
+  },
+  {
     path: '/about',
     label: 'About'
   }
