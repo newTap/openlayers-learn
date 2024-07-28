@@ -24,6 +24,14 @@ const router = [
   {
     path: '/about',
     label: 'About'
+  },
+  {
+    path: '/cluster',
+    label: 'cluster'
+  },
+  {
+    path: '/measure',
+    label: 'measure'
   }
 ]
 </script>
